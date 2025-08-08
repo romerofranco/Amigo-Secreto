@@ -3,16 +3,14 @@
 // Inicia declarando una variable de tipo array, que almacenara el nombre  de los amigos ingresados
 let amigos = [];
 
-//Capturar el valor del campo de entrada
+//Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
-  let nombreAmigos = document.getElementById("amigo").value;
-  console.log(nombreAmigos);
-}
-
-//Alerta Mensaje vacio
-function cajaVacia() {
   let valorCaja = document.querySelector("#amigo");
   if (valorCaja.value === "") {
     alert("Por favor, inserte un nombre");
+  } else {
+    let nombreAmigos = document.getElementById("amigo").value;
+    console.log(nombreAmigos);
   }
 }
+
