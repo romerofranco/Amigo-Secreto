@@ -1,7 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
 // Inicia declarando una variable de tipo array, que almacenara el nombre  de los amigos ingresados
-let listaAmigos = [];
+let listaNombreAmigos = [];
 
 //Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
@@ -11,11 +11,14 @@ function agregarAmigo() {
   } else {
     //Agregamos los nombres al array
     let nombreAmigos = document.getElementById("amigo").value;
-    listaAmigos.push(nombreAmigos);
+    listaNombreAmigos.push(nombreAmigos);
     //Limpiamos la caja
     document.getElementById("amigo").value = "";
-    console.log(listaAmigos);
+    console.log(listaNombreAmigos);
   }
 }
 
-//Actualizar el array de amigos, si el valor es valido añadirlo a la variable amigos con el metodo .push
+function actualizarLista(){
+    let 
+
+}
