@@ -8,3 +8,11 @@ function agregarAmigo() {
   let nombreAmigos = document.getElementById("amigo").value;
   console.log(nombreAmigos);
 }
+
+//Alerta Mensaje vacio
+function cajaVacia() {
+  let valorCaja = document.querySelector("#amigo");
+  if (valorCaja.value === "") {
+    alert("Por favor, inserte un nombre");
+  }
+}
