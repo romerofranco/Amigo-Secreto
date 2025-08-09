@@ -6,31 +6,32 @@ let listaNombreAmigos = [];
 //Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
   let valorCaja = document.querySelector("#amigo");
+  
   if (valorCaja.value === "") {
     alert("Por favor, inserte un nombre");
   } else {
     //Agregamos los nombres al array
-    let nombreAmigos = document.getElementById("amigo").value;
-    listaNombreAmigos.push(nombreAmigos);
+    listaNombreAmigos.push(valorCaja.value);
     //Limpiamos la caja
-    document.getElementById("amigo").value = "";
-    console.log(listaNombreAmigos);
+    valorCaja.value= "";
+    actualizarLista();
   }
 }
 
 function actualizarLista() {
-  //Selecciona la lista en donde estan los amigos y limpia la lista existente para que no haya repetidos
+  //Selecciona la lista en donde estan los amigos y
   let lista = document.getElementById("listaAmigos");
+  //limpia la lista existente para que no haya repetidos
   lista.innerHTML = "";
-}
 
-function recorrerListaYCrearElementos() {
-  actualizarLista();
   for (let i = 0; i < listaNombreAmigos.length; i++) {
+    //creamos un li
     let mostrarLista = document.createElement("li");
-    li.textContent = listaNombreAmigos[i];
-    lista.appendChild(li);
-  }``
+    mostrarLista.textContent = listaNombreAmigos[i];
+
+    lista.appendChild(mostrarLista);
+  }
 }
 
-recorrerListaYCrearElementos();
+
+actualizarLista();
