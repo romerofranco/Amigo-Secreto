@@ -18,7 +18,19 @@ function agregarAmigo() {
   }
 }
 
-function actualizarLista(){
-    let 
-
+function actualizarLista() {
+  //Selecciona la lista en donde estan los amigos y limpia la lista existente para que no haya repetidos
+  let lista = document.getElementById("listaAmigos");
+  lista.innerHTML = "";
 }
+
+function recorrerListaYCrearElementos() {
+  actualizarLista();
+  for (let i = 0; i < listaNombreAmigos.length; i++) {
+    let mostrarLista = document.createElement("li");
+    li.textContent = listaNombreAmigos[i];
+    lista.appendChild(li);
+  }``
+}
+
+recorrerListaYCrearElementos();
