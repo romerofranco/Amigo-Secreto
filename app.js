@@ -2,13 +2,12 @@
 
 // Inicia declarando una variable de tipo array, que almacenara el nombre  de los amigos ingresados
 let listaNombreAmigos = [];
-let numeroDeAmigos = prompt("Ingrese el numero de amigos que participaran");
-let generarIndiceAleatorio = Math.floor(Math.random() * numeroDeAmigos) + 1;
-console.log(generarIndiceAleatorio);
+let valorCaja = document.querySelector("#amigo"); //'amigo' es el  id  del input
+let lista = document.getElementById("listaAmigos"); // id del <ul> , seleccion la lista en donde estan los amigos
+let resultado = document.getElementById("resultado"); // id del <ul> para mostrar el resultado
+
 //Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
-  let valorCaja = document.querySelector("#amigo");
-
   if (valorCaja.value === "") {
     alert("Por favor, inserte un nombre");
   } else {
@@ -20,26 +19,26 @@ function agregarAmigo() {
   }
 }
 
+//Actualiza la lista de nombres en el HTML
 function actualizarLista() {
-  //Selecciona la lista en donde estan los amigos y
-  let lista = document.getElementById("listaAmigos");
   //limpia la lista existente para que no haya repetidos
   lista.innerHTML = "";
-
+  //recorremos el array con los nombres y creamos los li
   for (let i = 0; i < listaNombreAmigos.length; i++) {
     //creamos un li
-    let mostrarLista = document.createElement("li");
-    mostrarLista.textContent = listaNombreAmigos[i];
-
-    lista.appendChild(mostrarLista);
+    let creandoNombres = document.createElement("li");
+    creandoNombres.textContent = listaNombreAmigos[i];
+    lista.appendChild(creandoNombres);
   }
 }
 
-actualizarLista();
-
+//Boton Sortear Amigo
 function sortearAmigo() {
-  let compruebaVacio = document.getElementById("amigo");
-  if (compruebaVacio.value === "") {
+  if (listaNombreAmigos.length === 0) {
     alert("La Lista estas vacia, por favor ingrese un nombre.");
+  } else {
+    let indiceAleatorio = Math.floor(Math.random() * listaNombreAmigos.length);
+    let amigoSorteado = listaNombreAmigos[indiceAleatorio];
+    resultado.textContent = `El amigo Secreto es: ${amigoSorteado}`; 
   }
 }
