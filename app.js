@@ -2,18 +2,20 @@
 
 // Inicia declarando una variable de tipo array, que almacenara el nombre  de los amigos ingresados
 let listaNombreAmigos = [];
-
+let numeroDeAmigos = prompt("Ingrese el numero de amigos que participaran");
+let generarIndiceAleatorio = Math.floor(Math.random() * numeroDeAmigos) + 1;
+console.log(generarIndiceAleatorio);
 //Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
   let valorCaja = document.querySelector("#amigo");
-  
+
   if (valorCaja.value === "") {
     alert("Por favor, inserte un nombre");
   } else {
     //Agregamos los nombres al array
     listaNombreAmigos.push(valorCaja.value);
     //Limpiamos la caja
-    valorCaja.value= "";
+    valorCaja.value = "";
     actualizarLista();
   }
 }
@@ -33,5 +35,11 @@ function actualizarLista() {
   }
 }
 
-
 actualizarLista();
+
+function sortearAmigo() {
+  let compruebaVacio = document.getElementById("amigo");
+  if (compruebaVacio.value === "") {
+    alert("La Lista estas vacia, por favor ingrese un nombre.");
+  }
+}
