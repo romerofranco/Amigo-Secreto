@@ -1,18 +1,21 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
-// Inicia declarando una variable de tipo array, que almacenara el nombre  de los amigos ingresados
+// Array para guardar los nombres
 let listaNombreAmigos = [];
+
+//Elementos del DOM
 let valorCaja = document.querySelector("#amigo"); //'amigo' es el  id  del input
 let lista = document.getElementById("listaAmigos"); // id del <ul> , seleccion la lista en donde estan los amigos
 let resultado = document.getElementById("resultado"); // id del <ul> para mostrar el resultado
 
 //Capturar el valor del campo de entrada y alerta caja vacia
 function agregarAmigo() {
-  if (valorCaja.value === "") {
+  let nombre = valorCaja.value;
+  if (nombre === "") {
     alert("Por favor, inserte un nombre");
   } else {
     //Agregamos los nombres al array
-    listaNombreAmigos.push(valorCaja.value);
+    listaNombreAmigos.push(nombre);
     //Limpiamos la caja
     valorCaja.value = "";
     actualizarLista();
@@ -39,6 +42,6 @@ function sortearAmigo() {
   } else {
     let indiceAleatorio = Math.floor(Math.random() * listaNombreAmigos.length);
     let amigoSorteado = listaNombreAmigos[indiceAleatorio];
-    resultado.textContent = `El amigo Secreto es: ${amigoSorteado}`; 
+    resultado.textContent = `El amigo Secreto es: ${amigoSorteado}`;
   }
 }
